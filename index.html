@@ -27,7 +27,7 @@
       <div class="logo">LAMBDA</div>
       <div class="nav-list">
         <div class="nav-item page-scroll"><a href="#services">SERVICE</a></div>
-        <div class="nav-item page-scroll"><a href="#reatres">FEATRES</a></div>
+        <div class="nav-item page-scroll"><a href="#features">FEATRES</a></div>
         <div class="nav-item page-scroll"><a href="#reviews">REVIEWS</a></div>
         <div class="nav-item page-scroll"><a href="#pricing">PRICING</a></div>
         <div class="nav-item page-scroll"><a href="#faq">FAQ</a></div>
@@ -573,22 +573,25 @@
                 <p>Free Bootstrap 4 Multipurpose Landing Page Template by </p>
             </div>
         </div>
-    </footer>
-
+    </footer>    
 
     <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"
-    ></script>
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
     <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"
-    ></script>
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"
+  ></script>
     <!-- <script src="js/scripts.js"></script> -->
     <script type="text/javascript">
-      $(document).on("ready", function() {
-        // $('.slick-reviews').slick();
-        $(".slick-reviews").slick({
+         $(".slick-reviews").slick({
           slidesToShow: 1,
           slidesToScroll: 1,
           autoplay: true,
@@ -596,20 +599,23 @@
           dots: true,
           arrows: false
         });
+    </script>
+    <script type="text/javascript">
+      $('.page-scroll > a').click(function(){
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+          scrollTop: $($anchor.attr('href')).offset().top-100
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+      });
 
+    </script>
+    <script type="text/javascript">
+      $(document).on("ready", function() {
         $("body").scrollspy({
             target: ".navbar-custom",
             offset: 370
         })
-
-        $('.page-scroll > a').click(function(){
-		var $anchor = $(this);
-		$('html, body').stop().animate({
-			scrollTop: $($anchor.attr('href')).offset().top-100
-		}, 1500, 'easeInOutExpo');
-		event.preventDefault();
-	});
-
       });
     </script>
   </body>
